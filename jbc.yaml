@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello-job
+spec:
+  completions: 10
+  template:
+    metadata:
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - echo
+        - Hi
+        - hello
+        image: busybox
+        name: hello
+      restartPolicy: Never

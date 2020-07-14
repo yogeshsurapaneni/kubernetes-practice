@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: test-container
+      image: nginx
+      envFrom:
+      - configMapRef:
+          name: myconfigmap
+  restartPolicy: Never
